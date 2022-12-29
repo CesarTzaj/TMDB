@@ -177,6 +177,7 @@ main {
 .treadingOption .filters {
   border-radius: 2rem;
   border: #000 solid 2px;
+  display: no;
 }
 
 .treadingOption article {
@@ -218,7 +219,6 @@ main {
   font-size: var(--regular-font);
   font-weight: var(--bold);
   color: var(--mainblack);
-
 }
 .treadings{
   display: none;
@@ -406,7 +406,8 @@ body .fa-solid{
   display: none;
 }
 #treadingTV.show{
-  display: grid;
+  display: block;
+  width: 100%;
 }
 
 @media (max-width: 700px) {
@@ -490,7 +491,10 @@ body .fa-solid{
   }
   .filters {
     display: flex;
-    margin-left: auto;
+    position: absolute;
+    margin: 0;
+    display: none;
+    /* border: green 3px solid; */
     /* justify-content: flex-end; */
   }
 
@@ -510,11 +514,16 @@ body .fa-solid{
     -webkit-background-clip: text;
     color: transparent;
   }
-
+  .treadingOption{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
   .treadingOption article {
+    /* display: none; */
     display: flex;
     position: relative;
-    margin-right: 0px;
+    margin-right: 10px;
     font-size: var(--mobile-font);
     font-weight: var(--bold);
   }
@@ -522,8 +531,9 @@ body .fa-solid{
   .tops {
     width: 100vw;
     display: grid;
+    gap: 5px;
     justify-content: start;
-    grid-auto-columns: 30%;
+    grid-auto-columns: 35%;
     grid-template-rows: 250px;
     grid-auto-flow: column;
     overflow: hidden;
@@ -545,6 +555,15 @@ body .fa-solid{
     flex-direction: column;
     width: 90%;
     justify-self: center;
+  }
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-inline: auto;
+    font-size: var(--regular-font);
+    font-weight: var(--bold);
+    color: var(--mainblack);
   }
   .background{
     width: 100%;
