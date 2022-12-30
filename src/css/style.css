@@ -173,11 +173,22 @@ main {
   display: flex;
 
 }
-
+.timerageMovie{
+  display: none;
+} 
+.timerageMovie.show{
+  display: flex;
+} 
+.detailTitle{
+  display: none;
+}
+.detailTitle.show{
+  display: block;
+}
 .treadingOption .filters {
   border-radius: 2rem;
   border: #000 solid 2px;
-  display: no;
+  display: flex;
 }
 
 .treadingOption article {
@@ -489,13 +500,10 @@ body .fa-solid{
     width: 90%;
     margin-inline: auto;
   }
-  .filters {
+  .treadingOption.filters {
     display: flex;
-    position: absolute;
     margin: 0;
     display: none;
-    /* border: green 3px solid; */
-    /* justify-content: flex-end; */
   }
 
   .filters .button.active {
@@ -520,7 +528,7 @@ body .fa-solid{
     justify-content: space-between;
   }
   .treadingOption article {
-    /* display: none; */
+
     display: flex;
     position: relative;
     margin-right: 10px;

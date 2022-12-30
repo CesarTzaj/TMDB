@@ -17,11 +17,12 @@ async function fetchData(url, query = '') {
 }
 
 async function Details(type, id, movie='') {
-
+  console.log(id);
+  console.log(`${API}${type}/${id}`);
   location.hash = `#detail=${id}-${type}-${movie}`
   detailsContainer.innerHTML = '';
   console.log(type, id);
-  TreadingOption(`Related with ${movie}`, treadingOption)
+  TreadingOption(`Related with ${movie}`, detailTitle)
   const response = await fetchData(`${API}${type}/${id}`);
   const divBackground = document.createElement('div');
   const informationSection = document.createElement('section');

@@ -12,6 +12,8 @@ function HomePage(){
   searchResult.classList.remove('show')
   treadingTV.classList.add('show');
   iconBack.classList.remove('show')
+  timerageMovie.classList.add('show')
+  detailTitle.classList.remove('show')
 }
 function search(){
   treadings.classList.remove('show');
@@ -26,6 +28,15 @@ function DetailsControl() {
     treadings.classList.add('show')
     iconBack.classList.add('show')
     treadingTV.classList.remove('show');
+    timerageMovie.classList.remove('show')
+    detailTitle.classList.add('show')
+
+    let hashInfo=location.hash.split('=')
+    let hashArray = hashInfo[1].split('-')
+    let title = hashArray[2].replace(/[\%20]/gm,' ')
+    console.log(hashArray);
+    console.log(hashArray[1],hashArray[0],title);
+    // Details(hashArray[1],hashArray[0],title);
 }
 function  navegator(){
   window.scrollTo(0, 0);
@@ -56,16 +67,8 @@ inputSearch.addEventListener('keydown', async (event)=>{
     navegator();
   }
 })
-iconBack.addEventListener('click', () =>{
-  let hashInfo=location.hash.split('=')
-  let hashArray = hashInfo[1].split('-')
- 
-  // let a = hashArray[2].replace(/\%20/gm,' ')
-  // console.log(a, 'a');
-  // console.log(hashArray[2].replace('%',' '));
-  console.log(hashArray);
-  window.history.back()
-  navegator();
-  
+iconBack.addEventListener('click',   () =>{
+  history.back()
 })
+
 HomePage()

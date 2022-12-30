@@ -23,5 +23,6 @@ const btnDayTV = document.querySelector('#tvday');
 const btnWeekTv = document.querySelector('#tvweek');
 const backgoundImgage = document.querySelector('.backgoundImage');
 const circle = document.querySelector('.outer circle')
-const treadingOption = document.querySelector('.treadingOption')
+const detailTitle = document.querySelector('.detailTitle')
 const treadingTV = document.querySelector('#treadingTV')
+const timerageMovie = document.querySelector('.timerageMovie')
