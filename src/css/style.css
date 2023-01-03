@@ -609,7 +609,7 @@ body .fa-solid{
     gap: 5px;
     justify-content: start;
     grid-auto-columns: 40%;
-    grid-template-rows: 250px;
+    grid-template-rows: 350px;
     grid-auto-flow: column;
     overflow: hidden;
     overflow-x: scroll;
