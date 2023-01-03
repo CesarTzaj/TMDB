@@ -66,9 +66,10 @@ ul {
   left: calc(50vh);
   z-index: 3;
 }
-.fa-solid{
-}
+
 /* main */
+
+
 main {
   display: grid;
   position: relative;
@@ -182,7 +183,7 @@ main {
 .detailTitle{
   display: none;
 }
-.detailTitle.show{
+.detailTitle{
   display: block;
 }
 .treadingOption .filters {
@@ -219,9 +220,77 @@ main {
   -webkit-background-clip: text;
   color: transparent;
 }
+.skeleton{
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
+.skeletonimg{
+  width: 150px;
+  height: 200px;
+  border-radius: 8px;
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
+.skeletonimgDtl{
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
+#footer{
+  display: grid;
+  width: 100%;
+}
+.detailsContainer{
+  width: 60%;
+}
+.skeletonTxt{
+  margin: 0;
+  width: 100%;
+  height: 15px;
+  margin: 5px;
+  border-radius: 20px;
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
+.skeletonDate{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 60%;
+  height: 15px;
+  border-radius: 20px;
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
+.skeletonTxt:last-child{
+  width: 50%;
+}
+.skeletonimgDtl{
+  width: 200px;
+  height: 250px;
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
+.skeletonTitle{
+  width: 100%;
+  height: 25px;
+  border-radius: 8px;
+  margin-left: 25px;
+  animation: skeleton-animation 2s ease-in-out  infinite alternate;
+}
 
+@keyframes skeleton-animation {
+  0%{
+    background-color: var(--scroll-gray);
+  }
+  100%{
+    background-color: var(--green-blue);
+  }
+}
+
+footer{
+  margin-bottom: 100px;
+}
 .portada {
-  width: 90%;
+  width: 100%;
+  min-height: 152px;
+  height: 250px;
   border-radius: 15px;
 }
 
@@ -254,9 +323,9 @@ main {
   border: 1px solid rgba(var(--lightGrey), 1);
 }
 
-.tops {
+.tops{
   display: grid;
-  grid-auto-columns: 15%;
+  grid-auto-columns: 20%;
   grid-template-rows: 350px;
   grid-auto-flow: column;
   overflow: hidden;
@@ -283,17 +352,15 @@ main {
   display: none;
 }
 
-.details.show {
+.details.show{
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 550px;
-  color: var();
-  
-  /* background-color: var(--green-blue); */
 }
+
 .detailBackgroundColor{
   display: none;
   position: absolute;
@@ -541,12 +608,15 @@ body .fa-solid{
     display: grid;
     gap: 5px;
     justify-content: start;
-    grid-auto-columns: 35%;
+    grid-auto-columns: 40%;
     grid-template-rows: 250px;
     grid-auto-flow: column;
     overflow: hidden;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
+  }
+  .portada{
+    width: 100%;
   }
   .details{
     display: none;

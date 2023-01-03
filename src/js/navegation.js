@@ -22,7 +22,7 @@ function search(){
   iconBack.classList.add('show')
   Buscar();
 }
-function DetailsControl() {
+ function DetailsControl() {
   detailsContainer.classList.add('show')
     searchContainer.classList.remove('show')
     treadings.classList.add('show')
@@ -36,7 +36,7 @@ function DetailsControl() {
     let title = hashArray[2].replace(/[\%20]/gm,' ')
     console.log(hashArray);
     console.log(hashArray[1],hashArray[0],title);
-    // Details(hashArray[1],hashArray[0],title);
+    // asd(hashArray[1],hashArray[0],title);
 }
 function  navegator(){
   window.scrollTo(0, 0);
@@ -72,3 +72,5 @@ iconBack.addEventListener('click',   () =>{
 })
 
 HomePage()
+
+
