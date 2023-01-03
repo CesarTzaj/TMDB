@@ -183,7 +183,7 @@ main {
 .detailTitle{
   display: none;
 }
-.detailTitle{
+.detailTitle.show{
   display: block;
 }
 .treadingOption .filters {

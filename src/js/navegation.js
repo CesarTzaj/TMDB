@@ -3,9 +3,7 @@ window.addEventListener('hashchange', navegator, false);
 
 
 function HomePage(){
-  randomMovie()
-  MovieCard(`${API}trending/movie/day`, topMovies);
-  MovieCard(`${API}trending/tv/day`, topOnTv);
+
   treadings.classList.add('show');
   searchContainer.classList.add('show')
   detailsContainer.classList.remove('show')
@@ -14,6 +12,9 @@ function HomePage(){
   iconBack.classList.remove('show')
   timerageMovie.classList.add('show')
   detailTitle.classList.remove('show')
+  randomMovie()
+  MovieCard(`${API}trending/movie/day`, topMovies);
+  MovieCard(`${API}trending/tv/day`, topOnTv);
 }
 function search(){
   treadings.classList.remove('show');
@@ -23,7 +24,7 @@ function search(){
   Buscar();
 }
  function DetailsControl() {
-  detailsContainer.classList.add('show')
+    detailsContainer.classList.add('show')
     searchContainer.classList.remove('show')
     treadings.classList.add('show')
     iconBack.classList.add('show')
