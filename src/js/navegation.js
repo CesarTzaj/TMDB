@@ -1,77 +1,113 @@
-window.addEventListener('loaded', ()=>{ navegator() }, false);
-window.addEventListener('hashchange', navegator, false);
+window.addEventListener(
+  "loaded",
+    navegator,
+  false
+);
+window.addEventListener("hashchange", navegator, false);
 
-
-function HomePage(){
-
-  treadings.classList.add('show');
-  searchContainer.classList.add('show')
-  detailsContainer.classList.remove('show')
-  searchResult.classList.remove('show')
-  treadingTV.classList.add('show');
-  iconBack.classList.remove('show')
-  timerageMovie.classList.add('show')
-  detailTitle.classList.remove('show')
-  randomMovie()
-  MovieCard(`${API}trending/movie/day`, topMovies);
-  MovieCard(`${API}trending/tv/day`, topOnTv);
+async function HomePage() {
+  location.hash = "#home";
+  tredings.classList.add("show");
+  searchContainer.classList.add("show");
+  detailsContainer.classList.remove("show");
+  searchResult.classList.remove("show");
+  tredingTV.classList.add("show");
+  timerageMovie.classList.add("show");
+  detailTitle.classList.remove("show");
+  await randomMovie();
+  await MovieCard(`trending/movie/day`, topMovies);
+  await MovieCard(`trending/tv/day`, topOnTv);
 }
-function search(){
-  treadings.classList.remove('show');
-  searchContainer.classList.add('show')
-  searchResult.classList.add('show') 
-  iconBack.classList.add('show')
+function search() {
+  window.scrollTo(0, 0);
+  tredings.classList.remove("show");
+  searchContainer.classList.add("show");
+  searchResult.classList.add("show");
   Buscar();
 }
- function DetailsControl() {
-    detailsContainer.classList.add('show')
-    searchContainer.classList.remove('show')
-    treadings.classList.add('show')
-    iconBack.classList.add('show')
-    treadingTV.classList.remove('show');
-    timerageMovie.classList.remove('show')
-    detailTitle.classList.add('show')
+function DetailsControl() {
+  detailsContainer.classList.add("show");
+  searchContainer.classList.remove("show");
+  tredings.classList.add("show");
+  tredingTV.classList.remove("show");
+  timerageMovie.classList.remove("show");
+  detailTitle.classList.add("show");
 
-    let hashInfo=location.hash.split('=')
-    let hashArray = hashInfo[1].split('-')
-    let title = hashArray[2].replace(/[\%20]/gm,' ')
-    console.log(hashArray);
-    console.log(hashArray[1],hashArray[0],title);
-    // asd(hashArray[1],hashArray[0],title);
+  let hashInfo = location.hash.split("=");
+  let hashArray = hashInfo[1].split("-");
+  let title = hashArray[2].replace(/[\%20]/gm, " ");
+  console.log(hashArray);
+  console.log(hashArray[1], hashArray[0], title);
+  // asd(hashArray[1],hashArray[0],title);
 }
-function  navegator(){
-  window.scrollTo(0, 0);
-  if (location.hash.startsWith('#detail=')) {
-    DetailsControl()    
-  } else if(location.hash.startsWith('#search=')){
-    search();
-  }else{
-    location.hash = '#home'
+async function navegator() {
+  document.documentElement.scrollTop=0;
+  console.log(document.documentElement.scrollTop + ' sroll ');
+  if (location.hash.startsWith("#detail=")) {
+    DetailsControl();
+  } else if (location.hash.startsWith("#search=")) {
+     search();
+  } else {
     HomePage();
   }
 }
-
-home.addEventListener('click', ()=>{
-  // location.hash = '#home'
-  navegator();
-})
-
-searchButton.addEventListener('click', async ()=>{
-  location.hash = `#search=${inputSearch.value}`
-  navegator();
-  
+btnMovieDay.addEventListener("click", async () => {
+  const currentCategorynActive = document.querySelector(
+    ".tredingOption .active"
+  );
+  currentCategorynActive.classList.remove("active");
+  btnMovieDay.classList.add("active");
+  await MovieCard(`trending/movie/day`, topMovies);
 });
 
-inputSearch.addEventListener('keydown', async (event)=>{
-  if (event.key == 'Enter') {
-    location.hash = `#search=${inputSearch.value}`
+btnMovieWeek.addEventListener("click", async () => {
+  const currentCategorynActive = document.querySelector(
+    ".tredingOption .active"
+  );
+  console.log(currentCategorynActive);
+  currentCategorynActive.classList.remove("active");
+  btnMovieWeek.classList.add("active");
+  await MovieCard(`trending/movie/week`, topMovies);
+});
+
+btnDayTV.addEventListener("click", async () => {
+  const currentTimerage = document.querySelector(".timeragetv .active");
+  currentTimerage.classList.remove("active");
+  btnDayTV.classList.add("active");
+  await MovieCard(`trending/tv/day`, topOnTv);
+});
+
+btnWeekTv.addEventListener("click", async () => {
+  const currentTimerage = document.querySelector(".timeragetv .active");
+  currentTimerage.classList.remove("active");
+  btnWeekTv.classList.add("active");
+  await MovieCard(`trending/tv/week`, topOnTv);
+});
+
+home.addEventListener("click", () => {
+
+  navegator();
+});
+
+searchButton.addEventListener("click", async () => {
+  if (inputSearch.value!=='') {
+    location.hash = `#search=${inputSearch.value}`;
     navegator();
   }
-})
-iconBack.addEventListener('click',   () =>{
-  history.back()
-})
+  // inputSearch.value = "";
+});
 
-HomePage()
+inputSearch.addEventListener("keydown",  (event) => {
+  console.log(event, " keydown");
+  if (event.key == "Enter") {
+    if (inputSearch.value!=='') {
+      location.hash = `#search=${inputSearch.value}`;
+      navegator();
+      
+    }
+  }
+});
 
 
+HomePage();
+observers.observe(topMovies)

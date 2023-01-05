@@ -1,133 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Store</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Movie Store</title>
-  <link rel="stylesheet" href="./src/css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+  </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-
-
-</head>
-
-<body>
-  <header class="contente-fluid  d-grid">
-    <nav class="navbar align-items-center ">
-      <div class="container " id="homePage">
-        <a class="logo" href="#"><img
-            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
-            alt=""></a>
-      </div>
-    </nav>
-  </header>
-  <title>manejo de erorr</title>
-  <i class="fa-solid fa-angle-left "></i>
-  <!-- main section  -->
-  <main>
-
-    <!-- searchbox -->
-    <section class="searchContainer backgoundImage  show">
-      <section class="backgoundColor ">
-      </section>
-      <section class="searchSection ">
-        <div action="" class="buscador ">
-          <input type="text" class="inputSearch" placeholder="Search">
-          <button type="button" class="searchButton">Search</button>
+  <body>
+    <button id="prueba">asfasd</button>
+    <header class="contente-fluid d-grid">
+      <nav class="navbar align-items-center">
+        <div class="container" id="homePage">
+          <a class="logo" href="#"
+            ><img
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+              alt=""
+          /></a>
         </div>
-      </section>
-    </section>
-    <!-- buttones -->
-    <!-- treadings and search results -->
-    <section class="details ">
-
-    </section>
-    <section class="treadings  show">
-      <section class=" row  results">
-        <!-- movies -->
-        <section class="my-2 ">
-          
-          <div class=" treadingOption">
-            <div class="detailTitle"></div>
-            <div class="timerageMovie ">
-              <article>TREANDING MOVIES</article>
-            <div class="filters    my-2 " name="dayWeek">
-              <button type="button" class="button active" id="movieday"><span>Day</span></button>
-              <button type="button" class="button " id="movieweek"><span>Week</span></button>
-            </div>
-            </div>
-
+      </nav>
+    </header>
+    <title>manejo de erorr</title>
+    <span id="error"></span>
+    <!-- main section  -->
+    <main>
+      <!-- searchbox -->
+      <section class="searchContainer backgoundImage show">
+        <section class="backgoundColor"></section>
+        <section class="searchSection">
+          <div action="" class="buscador">
+            <input type="text" class="inputSearch" placeholder="Search" />
+            <button type="button" class="searchButton">Search</button>
           </div>
-          <!-- treandings -->
-          <section class="tops" id="movies">
-            <!-- <div class="col-5 col-sm-3 col-lg-2 mt-3 mb-4">
-                              <img class="porda" alt="Portada  de Guillermo del Toro's Pinocchio" src="https://image.tmdb.org/t/p/w200//vx1u0uwxdlhV2MUzj4VlcMB0N6m.jpg">
-                              <h5 class="title">Guillermo del Toro's Pinocchio</h5>
-                              <article>Tue Nov 08 2022</article>
-                            </div> -->
-          </section>
-        </section>
-        <!-- on TV -->
-        <section class="mt-4 " id="treadingTV">
-          <div class="treadingOption" >
-            <article>TREANDING TV</article>
-            <form class="filters timeragetv " name="dayWeek">
-              <button type="button" class="button active" id="tvday"><span>Day</span></button>
-              <button type="button" class="button " id="tvweek"><span>Week</span></button>
-            </form>
-          </div>
-          <section class=" tops" id="onTv">
-            <!-- <div class="col-5 col-sm-3 col-lg-2 mt-3 mb-4">
-                            <img class="porda" alt="Portada  de Guillermo del Toro's Pinocchio" src="https://image.tmdb.org/t/p/w200//vx1u0uwxdlhV2MUzj4VlcMB0N6m.jpg">
-                            <h5 class="title">Guillermo del Toro's Pinocchio</h5>
-                            <article>Tue Nov 08 2022</article>
-                          </div> -->
-          </section>
         </section>
       </section>
-    </section>
-    <section class="searchResult">
-      <!-- <div class="col-10 mt-5 searchResults align-items-center">
-        <img
-          src="https://m.media-amazon.com/images/M/MV5BNjA3NGExZDktNDlhZC00NjYyLTgwNmUtZWUzMDYwMTZjZWUyXkEyXkFqcGdeQXVyMTU1MDM3NDk0._V1_FMjpg_UX1000_.jpg"
-          alt="">
-        <div>
-          <h5 class="fw-bold fs-1">Mad Max: Fury Road</h5>
-          <article>
-            An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity
-            is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two
-            rebels on the run who just might be able to restore order."
-          </article>
-        </div>
-      </div> -->
-    </section>
+      <!-- tredings and search results -->
+      <section class="details"></section>
+      <section class="tredings show">
+        <section class="results">
+          <!-- movies -->
+          <section class="my-2" id="prueba">
+            <div class="tredingOption">
+              <div class="detailTitle"></div>
+              <div class="timerageMovie">
+                <article>TREANDING MOVIES</article>
+                <div class="filters my-2" name="dayWeek">
+                  <button type="button" class="button active" id="movieday">
+                    <span>Day</span>
+                  </button>
+                  <button type="button" class="button" id="movieweek">
+                    <span>Week</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- treandings -->
+            <section class="tops" id="movies">
+            </section>
+          </section>
+          <!-- on TV -->
+          <section class="mt-4" id="tredingTV">
+            <div class="tredingOption">
+              <article>TREANDING TV</article>
+              <form class="filters timeragetv" name="dayWeek">
+                <button type="button" class="button active" id="tvday">
+                  <span>Day</span>
+                </button>
+                <button type="button" class="button" id="tvweek">
+                  <span>Week</span>
+                </button>
+              </form>
+            </div>
+            <section class="tops should-fade" id="onTv">
+            </section>
+          </section>
+        </section>
+      </section>
+      <section class="searchResult">
 
+      </section>
 
+    </main>
+    <footer class="  " id="footer">
+      <div class="should-fade"></div>
+      <div></div>
+    </footer>
 
-  </main>
-  <footer class="  " id="footer">
-    <!-- <div class="col-10 mt-5 searchResults align-self-center">
-
-      <div class="skeletonimg"></div>
-      <div class="detailsContainer mt-4">
-        <p class="skeletonTitle mb-4"></p>
-        <p class="skeletonTxt"></p>
-        <p class="skeletonTxt"></p>
-        <p class="skeletonTxt"></p>
-      </div>
-    </div> -->
-
-  </footer>
-
-  <!-- scripts -->
-  <script src="./src/js/variable.js"></script>
-  <script src="./src/js/main.js"></script>
-  <script src="./src/js/navegation.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-</body>
+    <!-- scripts -->
+    <script src="./src/js/variable.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/navegation.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
