@@ -14,6 +14,7 @@ async function fetchData(url, query = "") {
     errorSpan.append(error);
   }
 }
+
 function skeletonImg(wrapper) {
   // wrapper.innerHTML='';
   for (let index = 0; index < 5; index++) {
@@ -190,11 +191,13 @@ async function Details(type, id, movie = "") {
     number.classList.add("number");
     number.append(porcentage, "%");
     userScore.append("User Score");
+    let gendersList = [];
     response.genres.forEach((gender) => {
       const li = document.createElement("li");
       li.append(gender.name);
-      unorderList.append(li);
+      gendersList.push(li)
     });
+    unorderList.append(...gendersList);
     genders.append(date, dot, unorderList);
   } else {
     tredings.classList.remove("show");
@@ -240,6 +243,8 @@ async function MovieCard(url, wrapper, query='') {
   if (query=='') {
     wrapper.innerHTML = "";
   }
+  let cardResponse = [];
+
   response.results.forEach((element) => {
     let name;
     const card = document.createElement("div");
@@ -269,10 +274,11 @@ async function MovieCard(url, wrapper, query='') {
     });
     title.append(name);
     card.append(movideImg, title, date);
-    wrapper.append(card);
+    cardResponse.push(card);
 
     // observer.observe(topMovies);
   });
+  wrapper.append(...cardResponse);
 }
 let a = 2
 prueba.addEventListener('click', async ()=>
@@ -309,6 +315,8 @@ async function Buscar() {
       `query=${inputSearch.value}`
     );
     searchResult.innerHTML = "";
+    let resultCard = [];
+
     response.results.forEach((movie) => {
       const content = document.createElement("div");
       const contentText = document.createElement("div");
@@ -349,7 +357,8 @@ async function Buscar() {
       title.append(name);
       contentText.append(title, article);
       content.append(imgCard, contentText);
-      searchResult.append(content);
+      resultCard.push(content);
     });
+    searchResult.append(...resultCard)
 }
 // Languages() 

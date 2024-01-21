@@ -84,8 +84,9 @@ main {
 .searchContainer.show{
   display: grid;
   position: relative;
-  width: 100%;
+  width: 70%;
   height: 347px;
+  justify-self: center;
 }
 
 .backgoundImage {
@@ -93,21 +94,29 @@ main {
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: 70%;
   background-repeat: no-repeat;
   background-clip: inherit;
   background-size: cover;
   background-position: 0px;
-  background-position-y: center;
+  background-position-y: top;
+  border-radius: 2rem;
 }
-
+#backgoundImage{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: var(--dark-blue);
+}
 .backgoundColor {
   position: absolute;
   top: 0;
   height: 100%;
   width: 100%;
   background-color: var(--green-blue);
-  opacity: 0.2;
+  opacity: 0.3;
+  border-radius: 2rem;
 }
 .searchSection{
   display: flex;
@@ -689,6 +698,9 @@ body .fa-solid{
     display: grid ;
     justify-items: center;
   }
+  .backgoundImage.show{
+    border-radius: 0;
+  }
 
 }
 
@@ -762,10 +774,5 @@ circle .asdf{
   overflow-x: scroll;
   overscroll-behavior-x: contain;
  gap: 15px;
-}
-.pruebas{
-  width: 20%;
-  height: 100vh;
-  background-color: #000;
 }
 
